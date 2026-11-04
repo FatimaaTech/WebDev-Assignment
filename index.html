@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter & Cup — Book Café</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo">Chapter &amp; Cup</a>
+    <nav aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="#story">Story</a></li>
+        <li><a href="#nooks">Nooks</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a href="#reserve" class="nav-cta">Reserve</a></li>
+        <!-- 3. THEME SWITCHER BUTTON -->
+        <li><button type="button" id="theme-toggle" class="theme-btn">Toggle</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <p class="kicker">A café for slow mornings and long chapters</p>
+        <h1>Where every page pairs with a pour.</h1>
+
+        <!-- 8. OPENING STATUS BANNER -->
+        <p id="status" class="status"></p>
+
+        <p class="hero-copy">Chapter &amp; Cup is a small neighbourhood café built around two things worth
+          slowing down for: a well-pulled espresso and a book you can't put down. Browse our shelves,
+          claim a nook, and stay as long as the story needs.</p>
+        <div class="hero-actions">
+          <a href="#reserve" class="btn btn-primary">Reserve a table</a>
+          <a href="#menu" class="btn btn-ghost">See the menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR STORY (6. READ MORE) -->
+  <section id="story" class="section story">
+    <div class="wrap">
+      <article class="story-article">
+        <h2>Our story</h2>
+        <p>Chapter &amp; Cup started with a simple idea: a café where nobody hurries you out. We
+          filled the walls with secondhand books, found a roaster three blocks away, and left the
+          lamps on.</p>
+        <p id="story-more" hidden>Over time the shelves grew, the regulars started leaving their own
+          favourites for others to find, and the staff began reading aloud at the counter on quiet
+          afternoons. Today it is part café, part library, and part living room for the neighbourhood.</p>
+        <button type="button" id="read-more-btn" class="btn btn-ghost">Read More</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- READING NOOKS -->
+  <section id="nooks" class="section nooks">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Pick your corner</h2>
+        <p>Three spaces, three moods. All of them come with a bottomless view of the shelves.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <h3>The Espresso Corner</h3>
+          <p>Two counter seats by the machine, best for a quick short story and a fast double shot
+            before the day gets going.</p>
+          <span class="card-tag">Seats 2 · Quiet hum</span>
+        </article>
+        <article class="card">
+          <h3>The Reading Nook</h3>
+          <p>A deep armchair tucked behind the poetry shelf, with a lamp that stays on past closing
+            for the last few pages.</p>
+          <span class="card-tag">Seats 1–2 · Low light</span>
+        </article>
+        <article class="card">
+          <h3>The Study Table</h3>
+          <p>A long communal table under the skylight, favoured by students, laptops, and anyone
+            splitting a pot of tea for two.</p>
+          <span class="card-tag">Seats 6 · Bright</span>
+        </article>
+      </div>
+
+      <aside class="special">
+        <p class="special-label">Today's special</p>
+        <p class="special-body">Cardamom oat latte, paired with whatever the staff is currently reading
+          out loud at the counter. Ask us what that is.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="section menu">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The menu</h2>
+        <p>Small batches, printed weekly, chalked whenever we run out.</p>
+      </div>
+
+      <!-- 7. FILTER BUTTONS -->
+      <div class="filter-bar">
+        <button type="button" class="filter-btn active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="drinks">Drinks</button>
+        <button type="button" class="filter-btn" data-filter="pastries">Pastries</button>
+      </div>
+
+      <table>
+        <caption>Drinks and light bites, priced by size where it applies</caption>
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Size</th>
+            <th scope="col">Price</th>
+            <th scope="col">Add</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-category="drinks">
+            <th scope="row">Drip coffee</th>
+            <td>12oz / 16oz</td>
+            <td>$3.00 / $3.75</td>
+            <td><input type="checkbox" class="order-check" data-price="3.00" aria-label="Add Drip coffee (12oz)"></td>
+          </tr>
+          <tr data-category="drinks">
+            <th scope="row">Cardamom oat latte</th>
+            <td>12oz</td>
+            <td>$5.25</td>
+            <td><input type="checkbox" class="order-check" data-price="5.25" aria-label="Add Cardamom oat latte"></td>
+          </tr>
+          <tr data-category="drinks">
+            <th scope="row">Pour-over, single origin</th>
+            <td>10oz</td>
+            <td>$5.50</td>
+            <td><input type="checkbox" class="order-check" data-price="5.50" aria-label="Add Pour-over"></td>
+          </tr>
+          <tr data-category="drinks">
+            <th scope="row">Loose-leaf tea</th>
+            <td>Pot for one</td>
+            <td>$4.00</td>
+            <td><input type="checkbox" class="order-check" data-price="4.00" aria-label="Add Loose-leaf tea"></td>
+          </tr>
+          <tr data-category="pastries">
+            <th scope="row">Butter croissant</th>
+            <td>—</td>
+            <td>$3.50</td>
+            <td><input type="checkbox" class="order-check" data-price="3.50" aria-label="Add Butter croissant"></td>
+          </tr>
+          <tr data-category="pastries">
+            <th scope="row">Fig &amp; walnut loaf, slice</th>
+            <td>—</td>
+            <td>$4.25</td>
+            <td><input type="checkbox" class="order-check" data-price="4.25" aria-label="Add Fig and walnut loaf"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 4. ORDER TOTAL -->
+      <p id="total" class="order-total">Total: $0.00</p>
+      <p class="order-note">Tick items to build an order. Drip coffee is counted at the 12oz price.</p>
+
+      <div class="why-visit">
+        <h3>Why people stay</h3>
+        <ol class="alpha-list">
+          <li><strong>Ambience</strong> — soft chatter, warm lamps, nowhere you're rushed to leave.</li>
+          <li><strong>Books to browse</strong> — every table sits within reach of a full shelf.</li>
+          <li><strong>Coffee roasted fresh</strong> — small-batch beans from a roaster three blocks over.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Inside Chapter &amp; Cup</h2>
+        <p>A quick look before you visit.</p>
+      </div>
+
+    <div class="gallery-grid">
+  <figure class="gallery-figure">
+    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80"
+         alt="Warm café interior with tables and soft lighting"
+         onerror="this.alt='Image unavailable'">
+    <figcaption>Our main room, late afternoon light — the busiest hour for both coffee and page-turning.</figcaption>
+  </figure>
+  <figure class="gallery-figure">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80"
+         alt="Cup of coffee on a wooden table"
+         onerror="this.alt='Image unavailable'">
+    <figcaption>A quiet table, mid-chapter — the whole reason the cups here are oversized.</figcaption>
+  </figure>
+  <figure class="gallery-figure">
+    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=80"
+         alt="Tall bookshelves filled with books"
+         onerror="this.alt='Image unavailable'">
+    <figcaption>The shelves behind the poetry corner, open for anyone to browse.</figcaption>
+  </figure>
+</div>
+      <div class="why-aesthetic">
+        <h3>Why Chapter &amp; Cup</h3>
+        <p>It's less a café than a mood: low brass light, worn wood, the smell of old paper and fresh
+          espresso sitting in the same room. We built every corner to be lingered in — nothing here is
+          rushing you toward the door.</p>
+      </div>
+
+      <p class="gallery-links">
+        See more on
+        <a href="#" onclick="return false;">Instagram</a>,
+        <a href="#" onclick="return false;">our events calendar</a>, or
+        <a href="#" onclick="return false;">the neighbourhood guide</a> that featured us last spring.
+      </p>
+    </div>
+  </section>
+
+  <!-- VISIT / RESERVE -->
+  <section id="visit" class="section visit">
+    <div class="wrap visit-inner">
+      <div class="visit-info">
+        <h2>Visit us</h2>
+        <p>124 Elm Street, Rawalpindi. Open every day — walk in, or hold a table below.</p>
+        <ul class="hours-list">
+          <li><span>Mon – Fri</span><span>7:30 AM – 9:00 PM</span></li>
+          <li><span>Sat – Sun</span><span>8:00 AM – 10:00 PM</span></li>
+        </ul>
+      </div>
+
+      <form id="reserve" class="reserve-form" aria-label="Table reservation form"  novalidate>
+        <h3>Reserve a table</h3>
+
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <!-- 5. BIRTH YEAR -->
+        <div class="form-row">
+          <label for="birth-year">Birth year (optional, for student/senior discount)</label>
+          <input type="text" id="birth-year" name="birth-year" placeholder="e.g. 2002" maxlength="4">
+        </div>
+
+        <div class="form-row form-row-split">
+          <div>
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          <div>
+            <label for="guests">Guests</label>
+            <input type="number" id="guests" name="guests" min="1" max="8" value="2" required>
+          </div>
+        </div>
+
+        <fieldset class="form-row">
+          <legend>Seating preference</legend>
+          <label class="radio-label"><input type="radio" name="seating" value="indoor" checked> Indoor</label>
+          <label class="radio-label"><input type="radio" name="seating" value="outdoor"> Outdoor</label>
+          <label class="radio-label"><input type="radio" name="seating" value="no-preference"> No preference</label>
+        </fieldset>
+
+        <!-- 9. SPECIAL NOTES + CHARACTER COUNTER -->
+        <div class="form-row">
+          <label for="special-notes">Special requests</label>
+          <textarea id="special-notes" name="special-notes" rows="3" maxlength="100"
+                    placeholder="Allergies, celebrations, favourite genre..."></textarea>
+          <p id="char-count" class="char-count">100 characters remaining</p>
+        </div>
+
+        <div class="form-row form-row-checkbox">
+          <label class="checkbox-label">
+            <input type="checkbox" name="newsletter" value="yes">
+            Send me the weekly reading &amp; roast update
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Hold my table</button>
+
+        <!-- 1 & 5. MESSAGES SHOWN AFTER SUBMIT -->
+        <p id="form-message" class="form-message" aria-live="polite"></p>
+        <p id="discount-message" class="form-message" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="logo footer-logo">Chapter &amp; Cup</p>
+      <p>124 Elm Street · Rawalpindi</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#nooks">Nooks</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reserve">Reserve</a></li>
+    </ul>
+    <ul class="footer-links">
+      <li><a href="#" onclick="return false;">Instagram</a></li>
+      <li><a href="#" onclick="return false;">Newsletter</a></li>
+    </ul>
+  </div>
+  <p class="footer-note">&copy; 2026 Chapter &amp; Cup. A page brewed for a static-page assignment.</p>
+</footer>
+
+<script src="javascript.js"></script>
+
+</body>
+</html>
